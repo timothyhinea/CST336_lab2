@@ -48,10 +48,16 @@ $(document).ready(function(){
 
     function isFormValid() {
 		let isValid = true;
-	//	if($("#q1").val() == "") {
-	//		isValid = false;
-	//		$("#validationFdbk").html("Question 1 was not ansered");
-	//	}
+		
+		for(var i = 0; i < 10; i++)
+		{
+
+			console.log(i)
+			if($("#q" + i).val() == "") {
+				isValid = false;
+				$("#validationFdbk").html(`Question ${i} was not ansered`);
+		}
+		}
 		return isValid;
     }
     
@@ -83,7 +89,7 @@ $(document).ready(function(){
 	    let q4Response = $("input[name=q4]:checked").val();
 	    let q9Response = $("input[name=q9]:checked").val();
 	    //Question 1
-	    if(q1Response == "a"){
+	    if(q1Response == "sacramento"){
 	        rightAnswer(1);
 	    }else{
 	        wrongAnswer(1);
